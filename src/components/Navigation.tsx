@@ -30,7 +30,7 @@ export function Navigation() {
           >
             <TramFrontIcon className="h-9 w-9 text-[#1EB053] transition-transform group-hover:rotate-12" />
             <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-[#1EB053] to-[#169544] bg-clip-text text-transparent">
-              Wisdom
+              Wisdom Dental Clinic
             </span>
           </Link>
 
