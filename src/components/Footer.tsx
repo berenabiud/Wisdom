@@ -211,15 +211,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">123 Dental Street<br/>New York, NY 10001</p>
+                <p className="ml-2 text-sm text-gray-300">Nairobi,Opposite Cooperative<br/>Kenya, NY 10001</p>
               </div>
               <div className="flex items-start">
                 <Phone className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">(555) 123-4567</p>
+                <p className="ml-2 text-sm text-gray-300">0728732301</p>
               </div>
               <div className="flex items-start">
                 <Mail className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">info@dentalcare.com</p>
+                <p className="ml-2 text-sm text-gray-300">obadiakimmaasai03@gmail.com</p>
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-[#F9D77E]/20 text-center">
           <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} Dental Care. All rights reserved.
+            © {new Date().getFullYear()} Wisdom Dental Clinc. All rights reserved.
           </p>
           <div className="mt-2 flex flex-wrap justify-center space-x-4">
             {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((item, index) => (

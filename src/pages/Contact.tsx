@@ -253,17 +253,17 @@ const contactItems = [
   {
     icon: MapPin,
     title: "Address",
-    content: "123 Dental Street\nNew York, NY 10001"
+    content: "Nairobi, Opposite Cooperative Bank"
   },
   {
     icon: Phone,
     title: "Phone",
-    content: "(555) 123-4567"
+    content: "0728732301"
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@dentalcare.com"
+    content: "obadiakimmaasai03@gmail.com"
   },
   {
     icon: Clock,

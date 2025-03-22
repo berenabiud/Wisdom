@@ -308,7 +308,7 @@ export function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendAdminNotification = async (data: BookingFormData) => {
-    const adminPhone = '254728732301'; // Admin's number in international format
+    const adminPhone = '254728732301'; 
     const message = encodeURIComponent(
       `New Booking Received!\n\n` +
       `Name: ${data.name}\n` +
