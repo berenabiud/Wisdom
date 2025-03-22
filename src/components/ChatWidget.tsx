@@ -94,7 +94,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{ text: string; isUser: boolean }>>([]);
+  const [messages, setMessages] = useState<Array<{ content: React.ReactNode; isUser: boolean }>>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
@@ -102,18 +102,38 @@ export function ChatWidget() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    setMessages([...messages, { text: input, isUser: true }]);
-    setInput('');
+    // Add user message
+    setMessages(prev => [...prev, { content: input, isUser: true }]);
     
-    // Simulate bot response
+    // Generate WhatsApp URL
+    const whatsappNumber = '254728732301'; // Replace with your WhatsApp business number in international format
+    const encodedMessage = encodeURIComponent(input);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Simulate bot response with WhatsApp link
     setIsTyping(true);
     setTimeout(() => {
       setMessages(prev => [...prev, {
-        text: "Thank you for your message. Our dental team will respond shortly.",
+        content: (
+          <span>
+            Thank you for your message. Please continue the conversation on{' '}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1EB053] underline hover:text-[#169544]"
+            >
+              WhatsApp
+            </a>
+            .
+          </span>
+        ),
         isUser: false
       }]);
       setIsTyping(false);
     }, 1500);
+
+    setInput('');
   };
 
   return (
@@ -165,7 +185,7 @@ export function ChatWidget() {
                           : 'bg-white text-gray-800 shadow-md'
                       }`}
                     >
-                      {message.text}
+                      {message.content}
                     </div>
                   </motion.div>
                 ))}

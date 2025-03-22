@@ -7,6 +7,7 @@ import { Book } from './pages/Book';
 import { Testimonials } from './pages/Testimonials';
 import { Contact } from './pages/Contact';
 import { Footer } from './components/Footer';
+import { Blog } from './pages/Blog';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/book" element={<Book />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path='/blogs' element={<Blog/>}/>
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

@@ -149,13 +149,132 @@
 //   );
 // }
 
+
+// import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+
+// export function Footer() {
+//   return (
+//     <footer className="bg-[#1B4536] text-white">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+//         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+//           {/* Company Info */}
+//           <div className="space-y-4">
+//             <div className="flex items-center">
+//               <span className="text-2xl font-bold text-[#F9D77E]">DentalCare</span>
+//             </div>
+//             <p className="text-sm text-gray-300">
+//               Providing exceptional dental care with compassion and advanced technology since 2010.
+//             </p>
+//             <div className="flex space-x-4">
+//               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
+//                 <a
+//                   key={index}
+//                   href="#"
+//                   className="text-[#F9D77E] hover:text-white transition-colors"
+//                 >
+//                   <Icon className="w-5 h-5" />
+//                 </a>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* Services */}
+//           <div className="space-y-4">
+//             <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Our Services</h4>
+//             <ul className="space-y-2">
+//               {['General Dentistry', 'Cosmetic Dentistry', 'Orthodontics', 'Pediatric Care', 'Dental Implants'].map((item, index) => (
+//                 <li key={index}>
+//                   <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Quick Links */}
+//           <div className="space-y-4">
+//             <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Quick Links</h4>
+//             <ul className="space-y-2">
+//               {['About Us', 'Meet the Team', 'Patient Reviews', 'Blog', 'Careers'].map((item, index) => (
+//                 <li key={index}>
+//                   <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Contact Info */}
+//           <div className="space-y-4">
+//             <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Contact Us</h4>
+//             <div className="space-y-3">
+//               <div className="flex items-start">
+//                 <MapPin className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
+//                 <p className="ml-2 text-sm text-gray-300">Nairobi,Opposite Cooperative<br/>Kenya, NY 10001</p>
+//               </div>
+//               <div className="flex items-start">
+//                 <Phone className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
+//                 <p className="ml-2 text-sm text-gray-300">0728732301</p>
+//               </div>
+//               <div className="flex items-start">
+//                 <Mail className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
+//                 <p className="ml-2 text-sm text-gray-300">obadiakimmaasai03@gmail.com</p>
+//               </div>
+//             </div>
+//           </div>
+//           {/* Newsletter */}
+//           <div>
+//             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+//             <form className="flex flex-col">
+//               <input
+//                 type="email"
+//                 placeholder="Enter your email"
+//                 className="mb-3 p-2 rounded text-gray-900"
+//                 required
+//               />
+//               <button
+//                 type="submit"
+//                 className="bg-white text-blue-900 py-2 px-4 rounded hover:bg-blue-100 transition"
+//               >
+//                 Subscribe
+//               </button>
+//             </form>
+//             <p className="mt-4 text-sm">Get dental health tips and special offers</p>
+//           </div>
+//         </div>
+
+//         {/* Copyright */}
+//         <div className="pt-8 border-t border-[#F9D77E]/20 text-center">
+//           <p className="text-sm text-gray-300">
+//             © {new Date().getFullYear()} Wisdom Dental Clinc. All rights reserved.
+//           </p>
+//           <div className="mt-2 flex flex-wrap justify-center space-x-4">
+//             {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((item, index) => (
+//               <a
+//                 key={index}
+//                 href="#"
+//                 className="text-sm text-gray-300 hover:text-white transition-colors"
+//               >
+//                 {item}
+//               </a>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
+
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function Footer() {
   return (
     <footer className="bg-[#1B4536] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
@@ -166,13 +285,14 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <a
+                <motion.a
                   key={index}
                   href="#"
+                  whileHover={{ y: -2 }}
                   className="text-[#F9D77E] hover:text-white transition-colors"
                 >
                   <Icon className="w-5 h-5" />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -211,11 +331,11 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">Nairobi,Opposite Cooperative<br/>Kenya, NY 10001</p>
+                <p className="ml-2 text-sm text-gray-300">Nairobi, Opposite Cooperative<br/>Kenya</p>
               </div>
               <div className="flex items-start">
                 <Phone className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">0728732301</p>
+                <p className="ml-2 text-sm text-gray-300">0728 732 301</p>
               </div>
               <div className="flex items-start">
                 <Mail className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
@@ -223,14 +343,38 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Newsletter */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Newsletter</h4>
+            <form className="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="p-3 rounded-lg border border-[#F9D77E] focus:outline-none focus:ring-2 focus:ring-[#1EB053] text-gray-900"
+                required
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                className="bg-[#1EB053] text-white py-3 px-6 rounded-lg hover:bg-[#169544] transition-colors font-medium"
+              >
+                Subscribe
+              </motion.button>
+            </form>
+            <p className="mt-2 text-sm text-gray-300">
+              Get dental health tips and special offers
+            </p>
+          </div>
         </div>
 
         {/* Copyright */}
         <div className="pt-8 border-t border-[#F9D77E]/20 text-center">
           <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} Wisdom Dental Clinc. All rights reserved.
+            © {new Date().getFullYear()} Wisdom Dental Clinic. All rights reserved.
           </p>
-          <div className="mt-2 flex flex-wrap justify-center space-x-4">
+          <div className="mt-2 flex flex-wrap justify-center gap-4">
             {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((item, index) => (
               <a
                 key={index}

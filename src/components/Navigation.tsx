@@ -10,6 +10,7 @@ export function Navigation() {
     { path: "/services", name: "Services" },
     { path: "/book", name: "Book Appointment" },
     { path: "/testimonials", name: "Testimonials" },
+    { path: "/blogs", name: "Blogs" },
     { path: "/contact", name: "Contact" }
   ];
 
