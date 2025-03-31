@@ -150,11 +150,12 @@ export function Home() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                A Smile is the prettiest thing you can wear <br/>
-              <span className="text-[#F9D77E]">For Your Whole Family</span>
+              <span className="text-[#F9D77E]">Experience compassionate, high-quality dental care backed by cutting-edge technology</span>
             </h1>
             <p className="text-xl mb-8 md:text-2xl md:leading-relaxed">
-              Experience compassionate, high-quality dental care backed by cutting-edge technology
+              At Wisdom Dental Clinic, we are committed to providing exceptional dental services that prioritize your comfort and oral health. Whether you're here for routine care or advanced treatments, our expert team ensures you receive the best care possible.
             </p>
+            <p>Book an appointment today and take the first step towards a healthier, brighter smile!</p>
             <motion.div whileHover={{ scale: 1.05 }}>
               <Link
                 to="/book"
