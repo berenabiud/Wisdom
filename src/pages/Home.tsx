@@ -149,12 +149,11 @@ export function Home() {
             className="text-white max-w-2xl"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Exceptional Dental Care <br/>
+               A Smile is the prettiest thing you can wear <br/>
               <span className="text-[#F9D77E]">For Your Whole Family</span>
             </h1>
             <p className="text-xl mb-8 md:text-2xl md:leading-relaxed">
-              Experience pain-free dentistry with cutting-edge technology and 
-              compassionate care from our award-winning dental team.
+              Experience compassionate, high-quality dental care backed by cutting-edge technology
             </p>
             <motion.div whileHover={{ scale: 1.05 }}>
               <Link
