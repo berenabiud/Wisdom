@@ -281,7 +281,7 @@ export function Footer() {
               <span className="text-2xl font-bold text-[#F9D77E]">DentalCare</span>
             </div>
             <p className="text-sm text-gray-300">
-              Providing exceptional dental care with compassion and advanced technology since 2010.
+              Providing exceptional dental care with compassion and advanced technology.
             </p>
             <div className="flex space-x-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
@@ -316,7 +316,7 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Quick Links</h4>
             {/* <li <a>href="/blogs" className="text-sm text-gray-300 hover:text-white transition-colors"</a>>About Us</li> */}
             <a href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
-            About Us 
+            Home 
                   </a>
             <ul className="space-y-2">
               {['About Us', 'Meet the Team', 'Patient Reviews', 'Blog', 'Careers'].map((item, index) => (
