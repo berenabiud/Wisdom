@@ -303,7 +303,7 @@ export function Footer() {
             <ul className="space-y-2">
               {['General Dentistry', 'Cosmetic Dentistry', 'Orthodontics', 'Pediatric Care', 'Dental Implants'].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <a href="/services" className="text-sm text-gray-300 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
@@ -314,10 +314,14 @@ export function Footer() {
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Quick Links</h4>
+            {/* <li <a>href="/blogs" className="text-sm text-gray-300 hover:text-white transition-colors"</a>>About Us</li> */}
+            <a href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
+            About Us 
+                  </a>
             <ul className="space-y-2">
               {['About Us', 'Meet the Team', 'Patient Reviews', 'Blog', 'Careers'].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <a href="/blogs" className="text-sm text-gray-300 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
@@ -331,15 +335,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">Nairobi, Opposite Cooperative<br/>Kenya</p>
+                <p className="ml-2 text-sm text-gray-300">NHC House 1st floor , opposite cooperative bank, agha khan walk <br/>Kenya</p>
               </div>
               <div className="flex items-start">
                 <Phone className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">0728 732 301</p>
+                <p className="ml-2 text-sm text-gray-300">0714 270 997 ,0791 531 408</p>
               </div>
               <div className="flex items-start">
                 <Mail className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">obadiakimmaasai03@gmail.com</p>
+                <p className="ml-2 text-sm text-gray-300">wisdomdentalclinic0@gmail.com</p>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, TramFrontIcon, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logo from '../images/ChatGPT Image Apr 4, 2025, 10_21_03 PM.png'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,15 +26,19 @@ export function Navigation() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link 
-            to="/" 
-            className="flex items-center group"
-            onClick={() => setIsOpen(false)}
-          >
-            <TramFrontIcon className="h-9 w-9 text-[#1EB053] transition-transform group-hover:rotate-12" />
-            <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-[#1EB053] to-[#169544] bg-clip-text text-transparent">
-              Wisdom Dental Clinic
-            </span>
-          </Link>
+    to="/" 
+    className="flex items-center group"
+    onClick={() => setIsOpen(false)}
+>
+    <img 
+        src={logo}
+        alt="Logo"
+        className="h-9 w-9 transition-transform group-hover:rotate-12"
+    />
+    <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-[#1EB053] to-[#169544] bg-clip-text text-transparent">
+        Wisdom Dental Clinic
+    </span>
+</Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

@@ -83,7 +83,7 @@ export function Blog() {
                     <User className="w-4 h-4" />
                     {post.author}
                   </div>
-                  <Link to={`/blog/${post.id}`} className="flex items-center gap-1 text-[#1EB053] hover:text-[#169544]">
+                  <Link to={`/blogs`} className="flex items-center gap-1 text-[#1EB053] hover:text-[#169544]">
                     Read More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -141,7 +141,7 @@ export function Blog() {
                           {post.author}
                         </div>
                         <Link
-                          to={`/blog/${post.id}`}
+                          to={`/blogs`}
                           className="flex items-center gap-1 text-[#1EB053] hover:text-[#169544]"
                         >
                           Read More <ArrowRight className="w-4 h-4" />

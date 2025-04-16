@@ -476,11 +476,26 @@ export function BookingForm() {
                 {...register('service', { required: 'Please select a service' })}
                 className="w-full py-3 px-4 rounded-xl border border-gray-200 focus:border-[#1EB053] focus:ring-2 focus:ring-[#1EB053]/20 appearance-none bg-select-arrow bg-no-repeat bg-[right_1rem_center]"
               >
-                <option value="">Select a service...</option>
-                <option value="cleaning">Teeth Cleaning</option>
-                <option value="whitening">Teeth Whitening</option>
-                <option value="filling">Dental Filling</option>
-                <option value="crown">Crown</option>
+               <option value="">Select a service...</option>
+                <option value="general-dentistry">General Dentistry</option>
+                <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
+                <option value="teeth-whitening">Teeth Whitening</option>
+                <option value="dental-implants">Dental Implants</option>
+                <option value="orthodontics">Orthodontics (Braces & Aligners)</option>
+                <option value="pediatric-dentistry">Pediatric Dentistry</option>
+                <option value="gum-treatment">Gum Disease Treatment</option>
+                <option value="root-canal">Root Canal Therapy</option>
+                <option value="tooth-extraction">Tooth Extraction</option>
+                <option value="emergency-care">Emergency Dental Care</option>
+                <option value="dental-crowns">Dental Crowns</option>
+                <option value="dental-bridges">Dental Bridges</option>
+                {/* <option value="dentures">Dentures</option> */}
+                {/* <option value="oral-surgery">Oral Surgery</option> */}
+                {/* <option value="tmj-treatment">TMJ Treatment</option> */}
+                {/* <option value="night-guards">Night Guards</option> */}
+                {/* <option value="sports-guards">Sports Guards</option> */}
+                {/* <option value="oral-cancer-screening">Oral Cancer Screening</option> */}
+                {/* <option value="sedation-dentistry">Sedation Dentistry</option> */}
               </select>
               {errors.service && (
                 <p className="mt-2 text-sm text-red-500 bg-red-50 px-3 py-1 rounded-lg">

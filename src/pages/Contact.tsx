@@ -238,7 +238,7 @@ export function Contact() {
         >
           <iframe
             title="clinic-location"
-            src="https://www.google.com/maps/embed/..."
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.839011013198!2d36.8236504!3d-1.2887272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1186c9d8f2c1%3A0xb730e1dff8cd34d8!2sWisdom+Dental+Clinic+Limited!5e0!3m2!1sen!2ske!4v1699261116928!5m2!1sen!2ske"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -253,21 +253,21 @@ const contactItems = [
   {
     icon: MapPin,
     title: "Address",
-    content: "Nairobi, Opposite Cooperative Bank"
+    content: "NHC House 1st floor , opposite cooperative bank, agha khan walk "
   },
   {
     icon: Phone,
     title: "Phone",
-    content: "0728732301"
+    content: " 0714 270 997 ,0791 531 408"
   },
   {
     icon: Mail,
     title: "Email",
-    content: "obadiakimmaasai03@gmail.com"
+    content: "wisdomdentalclinic0@gmail.com"
   },
   {
     icon: Clock,
     title: "Hours",
-    content: "Mon-Fri: 8am - 6pm\nSaturday: 9am - 2pm\nSunday: Closed"
+    content: "Mon-Fri: 7:00AM - 7:00PM\nSaturday:700 AM - 4:00 PM\nSunday: Closed"
   }
 ];

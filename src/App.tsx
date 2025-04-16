@@ -8,6 +8,8 @@ import { Testimonials } from './pages/Testimonials';
 import { Contact } from './pages/Contact';
 import { Footer } from './components/Footer';
 import { Blog } from './pages/Blog';
+// import AppointmentBooking from './components/AppointmentBooking';
+// import AppointmentForm from './components/AppointmentForm';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path='/blogs' element={<Blog/>}/>
             <Route path="/contact" element={<Contact />} />
+            {/* <Route path="/qwerty" element={<AppointmentBooking/>}/> */}
+            {/* <Route path='/kim' element={<AppointmentForm/>}/> */}
           </Routes>
         </main>
         <ChatWidget />
