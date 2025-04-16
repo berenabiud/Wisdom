@@ -8,6 +8,7 @@ import { Testimonials } from './pages/Testimonials';
 import { Contact } from './pages/Contact';
 import { Footer } from './components/Footer';
 import { Blog } from './pages/Blog';
+import GoogleReviews from './components/GoogleReviews';
 // import AppointmentBooking from './components/AppointmentBooking';
 // import AppointmentForm from './components/AppointmentForm';
 
@@ -21,7 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/book" element={<Book />} />
-            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/testimonials" element={<GoogleReviews />} />
             <Route path='/blogs' element={<Blog/>}/>
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="/qwerty" element={<AppointmentBooking/>}/> */}
