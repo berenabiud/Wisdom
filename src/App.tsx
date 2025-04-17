@@ -67,7 +67,7 @@ function App() {
           </main>
           <ChatWidget />
           <Footer />
-          <Popup /> {/* Injected here to show on any page */}
+          <Popup /> 
         </div>
       </Router>
     </PopupProvider>
