@@ -98,14 +98,34 @@ import {
   Clock, 
   MapPin, 
   Smile, 
- 
+  
   ShieldCheck, 
   Microscope,
-  
   HeartPulse,
-  TowerControlIcon
+  ScanEye,
+  Zap,
+  Camera,
+  Bone
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+// Add this to your CSS file or style tag
+const styles = `
+@keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animated-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-button span {
+  display: inline-block;
+  animation: slideLeft 10s linear infinite;
+}
+`;
 
 export function Home() {
   const features = [
@@ -116,21 +136,23 @@ export function Home() {
   ];
 
   const services = [
-    { icon: TowerControlIcon, title: "General Dentistry", text: "Routine checkups, cleanings, and fillings" },
+    { icon: Bone, title: "General Dentistry", text: "Routine checkups, cleanings, and fillings" },
     { icon: Smile, title: "Cosmetic Dentistry", text: "Whitening, veneers, and smile makeovers" },
     { icon: HeartPulse, title: "Orthodontics", text: "Braces and aligners for perfect alignment" },
     { icon: ShieldCheck, title: "Preventive Care", text: "Customized prevention plans for lasting health" }
   ];
 
   const technologies = [
-    { title: "Digital X-Rays", text: "90% less radiation with instant results" },
-    { title: "Laser Dentistry", text: "Pain-free treatments with faster healing" },
-    { title: "3D Imaging", text: "Precise treatment planning and predictable outcomes" },
-    { title: "Intraoral Cameras", text: "See what we see with real-time visuals" }
+    { icon: ScanEye, title: "Digital X-Rays", text: "90% less radiation with instant results" },
+    { icon: Zap, title: "Laser Dentistry", text: "Pain-free treatments with faster healing" },
+    { icon: Microscope, title: "3D Imaging", text: "Precise treatment planning and predictable outcomes" },
+    { icon: Camera, title: "Intraoral Cameras", text: "See what we see with real-time visuals" }
   ];
 
   return (
     <div className="overflow-hidden">
+      <style>{styles}</style>
+
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}
@@ -148,29 +170,58 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="text-white max-w-2xl"
           >
-            <h1 className="text-4xl md:text-4xl font-bold mb-4 leading-tight">
-               A Smile is the prettiest thing you can wear <br/>
-              <span className="text-[#F9D77E]">Experience compassionate, high-quality dental care backed by cutting-edge technology</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight drop-shadow-lg">
+              A Smile is the Prettiest Thing You Can Wear <br/>
+              <span className="text-[#F9D77E] bg-gradient-to-r from-[#1EB053]/30 to-transparent px-4 py-2 rounded-xl">
+                Experience Compassionate, Modern Dental Care
+              </span>
             </h1>
-            <p className="text-xl mb-4 md:text-2xl md:leading-relaxed">
-              At Wisdom Dental Clinic, we are committed to providing exceptional dental services that prioritize your comfort and oral health. Whether you're here for routine care or advanced treatments, our expert team ensures you receive the best care possible.
+            <p className="text-xl mb-8 md:text-2xl md:leading-relaxed max-w-xl">
+              At Wisdom Dental Clinic, we combine cutting-edge technology with personalized care to create your perfect smile.
             </p>
-            <p>Book an appointment today and take the first step towards a healthier, brighter smile!</p>
-            <motion.div whileHover={{ scale: 1.05 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/book"
-                className="inline-block bg-[#F9D77E] text-[#1EB053] px-8 py-4 rounded-xl text-lg 
-                font-semibold hover:bg-[#f4cf6a] transition-all shadow-lg"
+                className="animated-button inline-block bg-[#F9D77E] text-[#1EB053] px-8 py-4 rounded-xl text-lg 
+                           font-bold hover:bg-[#f4cf6a] transition-all shadow-lg overflow-hidden"
               >
-                Book Your Consultation
+                <span>Book Your Visit Today →</span>
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Featured Services */}
+      {/* Features Grid */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all
+                          border-2 border-[#1EB053]/10 hover:border-[#1EB053]/30 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#1EB053]/5 opacity-0 
+                              group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <feature.icon className="h-12 w-12 text-[#1EB053] mb-6" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-[#f8fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -185,13 +236,14 @@ export function Home() {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-[#F9D77E]/10 p-8 rounded-2xl border-2 border-[#1EB053]/20"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all
+                          border-2 border-transparent hover:border-[#1EB053]/20"
               >
-                <div className="bg-[#1EB053] w-max p-4 rounded-xl mb-6">
+                <div className="bg-gradient-to-br from-[#1EB053] to-[#169544] w-max p-3 rounded-xl mb-6">
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
@@ -199,7 +251,6 @@ export function Home() {
               </motion.div>
             ))}
           </div>
-         
         </div>
       </section>
 
