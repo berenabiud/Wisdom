@@ -318,15 +318,24 @@ export function Footer() {
             <a href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
             Home 
                   </a>
-            <ul className="space-y-2">
-              {['About Us', 'Meet the Team', 'Patient Reviews', 'Blog', 'Careers'].map((item, index) => (
-                <li key={index}>
-                  <a href="/blogs" className="text-sm text-gray-300 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                  <ul className="space-y-2">
+  {[
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Meet the Team', path: '/about-us' },
+    { name: 'Patient Reviews', path: '/testimonials' },
+    { name: 'Blog', path: '/blogs' },
+    // { name: 'Careers', path: '/services' }
+  ].map((item, index) => (
+    <li key={index}>
+      <a 
+        href={item.path} 
+        className="text-sm text-gray-300 hover:text-white transition-colors"
+      >
+        {item.name}
+      </a>
+    </li>
+  ))}
+</ul>
           </div>
 
           {/* Contact Info */}

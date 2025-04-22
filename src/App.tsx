@@ -49,6 +49,7 @@ import GoogleReviews from './components/GoogleReviews';
 import { PopupProvider } from './popups/PopupContext';
 import { Popup } from './popups/Popup';
 import ScrollToTop from './components/ScrollToTop';
+import About from './pages/About';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
               <Route path="/book" element={<Book />} />
               <Route path="/testimonials" element={<GoogleReviews />} />
               <Route path="/blogs" element={<Blog />} />
+              <Route path='/about-us' element={<About/>}/>
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

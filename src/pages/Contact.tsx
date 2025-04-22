@@ -376,7 +376,7 @@ export function Contact() {
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#1EB053] focus:ring-2 focus:ring-[#1EB053]/20 transition-all"
                   style={{ outline: 'none' }}
                   placeholder="Message"
-                  rows="5"
+                  // rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   required

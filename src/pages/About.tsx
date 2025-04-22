@@ -1,91 +1,203 @@
-import React from 'react';
-import { Award, Users, Globe, Rocket } from 'lucide-react';
 
-function About() {
+import { Smile, Shield, Clock, HeartPulse, Microscope, Rocket, Bone } from 'lucide-react';
+import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+
+const About = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, value: "500+", label: "Clients Worldwide" },
-    { icon: <Award className="h-8 w-8" />, value: "15+", label: "Years Experience" },
-    { icon: <Globe className="h-8 w-8" />, value: "30+", label: "Countries Served" },
-    { icon: <Rocket className="h-8 w-8" />, value: "1000+", label: "Projects Delivered" }
+    { icon: <Bone className="h-8 w-8" />, value: "5+", label: "Years Experience" },
+    { icon: <Smile className="h-8 w-8" />, value: "1K+", label: "Happy Patients" },
+    { icon: <Shield className="h-8 w-8" />, value: "500+", label: "Procedures Done" },
+    { icon: <Clock className="h-8 w-8" />, value: "24/7", label: "Emergency Care" }
+  ];
+
+  const team = [
+    { name: "Dr. Sarah Johnson", role: "Lead Dentist", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
+    { name: "Dr. Michael Chen", role: "Orthodontist", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d" },
+    { name: "Dr. Emma Wilson", role: "Pediatric Dentist", img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f" }
   ];
 
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="bg-[#024A59] text-white py-16">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="bg-gradient-to-r from-[#1EB053]/90 to-[#1EB053]/70 py-24 text-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">About Statify</h1>
-            <p className="text-xl">Empowering businesses through innovative technology solutions</p>
+          <div className="text-center space-y-6">
+            <motion.h1 
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              className="text-5xl font-bold mb-4"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}
+            >
+              Committed to Healthy Smiles
+            </motion.h1>
+            <p className="text-xl max-w-2xl mx-auto">
+              At Wisdom Dental, we combine cutting-edge technology with compassionate care to deliver exceptional dental experiences.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Stats Section */}
+      <div className="py-20 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+            }}
+          >
+            {stats.map((stat, index) => (
+              <motion.div 
+                key={index}
+                variants={{ hidden: { y: 20 }, visible: { y: 0 } }}
+                className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="flex justify-center text-[#1EB053] mb-4">
+                  {stat.icon}
+                </div>
+                <div className="text-4xl font-bold text-gray-800 mb-2">{stat.value}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Story Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              className="space-y-6"
+              initial={{ x: -50 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-4xl font-bold text-gray-800">
+                Our Journey in Dental Care
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Wisdom Dental Clinic has grown from a single-chair practice to Nairobi's premier dental care center. 
+                Our passion for creating healthy, beautiful smiles drives everything we do.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <HeartPulse className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">Patient-Centered Approach</h3>
+                    <p className="text-gray-600">Personalized care plans tailored to individual needs and comfort</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Microscope className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">Advanced Technology</h3>
+                    <p className="text-gray-600">Digital imaging, pain-free lasers, and CAD/CAM restorations</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div 
+              className="relative rounded-2xl overflow-hidden"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src="https://media.istockphoto.com/id/2153871515/photo/dentist-performing-a-checkup-on-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=XN6sDf_Vl3R5FR84pgZ8dwB94MZgjvt4PC1gcpk8QPw="
+                alt="Dental clinic interior"
+                className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1EB053]/20 to-[#F9D77E]/20" />
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="py-16 bg-white">
+      {/* Team Section */}
+      <div className="py-20 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="flex justify-center text-[#FFA916] mb-4">
-                  {stat.icon}
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
+            Meet Our Expert Dentists
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+              >
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-64 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-xl font-bold text-[#1EB053] mb-2">{member.name}</h3>
+                <p className="text-gray-600 mb-4">{member.role}</p>
+                <div className="flex space-x-4">
+                  {/* <button className="text-[#1EB053] hover:text-[#169544] transition-colors">
+                    View Profile →
+                  </button> */}
                 </div>
-                <div className="text-3xl font-bold text-[#024A59] mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Story Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-[#024A59] mb-6">Our Story</h2>
-              <p className="text-gray-600 mb-4">
-                Founded in 2009, Statify has grown from a small IT consultancy to a global technology solutions provider. 
-                Our journey has been driven by a singular vision: to help businesses harness the power of technology to achieve their full potential.
-              </p>
-              <p className="text-gray-600">
-                Today, we serve clients across multiple industries, providing cutting-edge solutions that drive innovation and growth. 
-                Our team of experts brings together decades of experience in business technology, consulting, and digital transformation.
-              </p>
-            </div>
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-                alt="Team collaboration" 
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Values Section */}
-      <div className="py-16 bg-white">
+      <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#024A59] text-center mb-12">Our Values</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Core Values</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">The foundation of everything we do at Wisdom Dental</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-[#024A59] mb-4">Innovation</h3>
-              <p className="text-gray-600">We constantly push the boundaries of what's possible in technology</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-[#024A59] mb-4">Excellence</h3>
-              <p className="text-gray-600">We strive for excellence in everything we do</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-[#024A59] mb-4">Integrity</h3>
-              <p className="text-gray-600">We maintain the highest standards of professional integrity</p>
-            </div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#F9D77E]/10 p-8 rounded-2xl border border-[#F9D77E]/20"
+            >
+              <div className="w-12 h-12 bg-[#1EB053] rounded-lg flex items-center justify-center mb-6">
+                <HeartPulse className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Compassionate Care</h3>
+              <p className="text-gray-600">Gentle, anxiety-free treatments with empathy at every step</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#F9D77E]/10 p-8 rounded-2xl border border-[#F9D77E]/20"
+            >
+              <div className="w-12 h-12 bg-[#1EB053] rounded-lg flex items-center justify-center mb-6">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Clinical Excellence</h3>
+              <p className="text-gray-600">Highest standards of sterilization and treatment protocols</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#F9D77E]/10 p-8 rounded-2xl border border-[#F9D77E]/20"
+            >
+              <div className="w-12 h-12 bg-[#1EB053] rounded-lg flex items-center justify-center mb-6">
+                <Rocket className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Continuous Innovation</h3>
+              <p className="text-gray-600">Always adopting the latest dental technologies and techniques</p>
+            </motion.div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default About;
