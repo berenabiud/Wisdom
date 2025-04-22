@@ -48,14 +48,17 @@ import { Blog } from './pages/Blog';
 import GoogleReviews from './components/GoogleReviews';
 import { PopupProvider } from './popups/PopupContext';
 import { Popup } from './popups/Popup';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <PopupProvider>
+      
       <Router>
         <div className="min-h-screen bg-gray-50 relative">
           <Navigation />
           <main>
+          <ScrollToTop/>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
