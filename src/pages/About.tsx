@@ -85,7 +85,7 @@ const About = () => {
           From Local Care to Smile Revolution
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          What began in 2005 as a modest neighborhood practice with Dr. Wanjiku Ngugi's vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 50,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
+          What began in 2022 as a modest neighborhood practice with Dr. Joan's vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 5,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
         </p>
         <p className="text-gray-600 text-lg leading-relaxed">
           Our evolution mirrors Nairobi's dental health transformation - from emergency extractions to preventive smile architecture. Today, we combine this rich heritage with German-engineered sterilization protocols and Japanese diagnostic systems to create what the Kenya Dental Association recognizes as "the new standard in oral wellness."
