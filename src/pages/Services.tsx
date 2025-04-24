@@ -13,7 +13,11 @@ import {
   CalendarRange
 } from 'lucide-react';
 import image from '../images/image2.jpg'
-import image1 from '../images/image1.jpg'
+import image1 from '../images/istockphoto-1543511026-612x612.webp'
+import image3 from '../images/ozkan-guner-ifPT2LwMvDs-unsplash.jpg'
+import image2  from '../images/premium_photo-1692441602035-a03ea6adfda2.avif'
+import Cosmetic from '../images/shedrack-salami-GKMQtxRe_Kg-unsplash.jpg'
+import image4 from '../images/shedrack-salami-7lBJaJpS3z4-unsplash222.jpg'
 
 const services = [
   {
@@ -30,7 +34,7 @@ const services = [
     description: 'Enhancing your smile with procedures such as veneers, bonding, and smile makeovers.',
     // price: '$299',
     // duration: '90 min',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80'
+    image: Cosmetic,
   },
   {
     id: 3,
@@ -38,7 +42,7 @@ const services = [
     description: 'Safe and effective treatments to brighten your teeth and remove stains.',
     // price: '$150',
     // duration: '45 min',
-    image: image1,
+    image: image3,
   },
 
   {
@@ -47,7 +51,7 @@ const services = [
     description: 'Preventing and managing periodontal disease to protect your gums and overall health.',
     // price: '$800',
     // duration: '120 min',
-    image: 'https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=600&q=80'
+    image: image2,
   },
   {
     id: 5,
@@ -63,7 +67,7 @@ const services = [
     description: 'Safe and comfortable removal of teeth when necessary.',
     // price: '$800',
     // duration: '120 min',
-    image: image,
+    image: image4,
   }
 
 ];
