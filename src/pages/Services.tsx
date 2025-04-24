@@ -12,6 +12,8 @@ import {
   Star,
   CalendarRange
 } from 'lucide-react';
+import image from '../images/image2.jpg'
+import image1 from '../images/image1.jpg'
 
 const services = [
   {
@@ -20,7 +22,7 @@ const services = [
     description: 'Regular checkups, cleanings, fillings, and preventive care to maintain optimal oral health.',
     // price: '$120',
     // duration: '60 min',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80'
+    image: image,
   },
   {
     id: 2,
@@ -36,7 +38,7 @@ const services = [
     description: 'Safe and effective treatments to brighten your teeth and remove stains.',
     // price: '$150',
     // duration: '45 min',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80'
+    image: image1,
   },
 
   {
@@ -53,7 +55,7 @@ const services = [
     description: 'Saving infected or damaged teeth with effective endodontic treatment',
     // price: '$800',
     // duration: '120 min',
-    image: 'https://plus.unsplash.com/premium_photo-1661436292231-f1e0e7b99b7b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    image: image1,
   },
   {
     id: 6,
@@ -61,7 +63,7 @@ const services = [
     description: 'Safe and comfortable removal of teeth when necessary.',
     // price: '$800',
     // duration: '120 min',
-    image: 'https://plus.unsplash.com/premium_photo-1673728795373-e5ac0caf5d09?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    image: image,
   }
 
 ];

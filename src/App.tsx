@@ -44,12 +44,13 @@ import { Services } from './pages/Services';
 import { Book } from './pages/Book';
 import { Contact } from './pages/Contact';
 import { Footer } from './components/Footer';
-import { Blog } from './pages/Blog';
+import { Blog, BlogPost } from './pages/Blog';
 import GoogleReviews from './components/GoogleReviews';
 import { PopupProvider } from './popups/PopupContext';
 import { Popup } from './popups/Popup';
 import ScrollToTop from './components/ScrollToTop';
 import About from './pages/About';
+// import BlogPost from './pages/Blog'
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
               <Route path="/blogs" element={<Blog />} />
               <Route path='/about-us' element={<About/>}/>
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
             </Routes>
           </main>
           <ChatWidget />

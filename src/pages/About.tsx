@@ -1,21 +1,21 @@
 
-import { Smile, Shield, Clock, HeartPulse, Microscope, Rocket, Bone } from 'lucide-react';
+import { Smile, Shield, Clock, HeartPulse, Microscope, Rocket, Bone, BookUser } from 'lucide-react';
 import { motion } from 'framer-motion';
 // import { useInView } from 'react-intersection-observer';
 
 const About = () => {
   const stats = [
-    { icon: <Bone className="h-8 w-8" />, value: "5+", label: "Years Experience" },
+    { icon: <Bone className="h-8 w-8" />, value: "3+", label: "Years Experience" },
     { icon: <Smile className="h-8 w-8" />, value: "1K+", label: "Happy Patients" },
     { icon: <Shield className="h-8 w-8" />, value: "500+", label: "Procedures Done" },
     { icon: <Clock className="h-8 w-8" />, value: "24/7", label: "Emergency Care" }
   ];
 
-  const team = [
-    { name: "Dr. Sarah Johnson", role: "Lead Dentist", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
-    { name: "Dr. Michael Chen", role: "Orthodontist", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d" },
-    { name: "Dr. Emma Wilson", role: "Pediatric Dentist", img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f" }
-  ];
+  // const team = [
+  //   { name: "Dr. Sarah Johnson", role: "Lead Dentist", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
+  //   { name: "Dr. Michael Chen", role: "Orthodontist", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d" },
+  //   { name: "Dr. Emma Wilson", role: "Pediatric Dentist", img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f" }
+  // ];
 
   return (
     <div className="overflow-hidden">
@@ -73,57 +73,70 @@ const About = () => {
 
       {/* Story Section */}
       <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              className="space-y-6"
-              initial={{ x: -50 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-4xl font-bold text-gray-800">
-                Our Journey in Dental Care
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Wisdom Dental Clinic has grown from a single-chair practice to Nairobi's premier dental care center. 
-                Our passion for creating healthy, beautiful smiles drives everything we do.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <HeartPulse className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Patient-Centered Approach</h3>
-                    <p className="text-gray-600">Personalized care plans tailored to individual needs and comfort</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <Microscope className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Advanced Technology</h3>
-                    <p className="text-gray-600">Digital imaging, pain-free lasers, and CAD/CAM restorations</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="relative rounded-2xl overflow-hidden"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src="https://media.istockphoto.com/id/2153871515/photo/dentist-performing-a-checkup-on-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=XN6sDf_Vl3R5FR84pgZ8dwB94MZgjvt4PC1gcpk8QPw="
-                alt="Dental clinic interior"
-                className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1EB053]/20 to-[#F9D77E]/20" />
-            </motion.div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <motion.div 
+        className="space-y-6"
+        initial={{ x: -50 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-4xl font-bold text-gray-800">
+          From Local Care to Smile Revolution
+        </h2>
+        <p className="text-gray-600 text-lg leading-relaxed">
+          What began in 2005 as a modest neighborhood practice with Dr. Wanjiku Ngugi's vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 50,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
+        </p>
+        <p className="text-gray-600 text-lg leading-relaxed">
+          Our evolution mirrors Nairobi's dental health transformation - from emergency extractions to preventive smile architecture. Today, we combine this rich heritage with German-engineered sterilization protocols and Japanese diagnostic systems to create what the Kenya Dental Association recognizes as "the new standard in oral wellness."
+        </p>
+        <div className="space-y-4">
+          <div className="flex items-start space-x-4">
+            <HeartPulse className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">Biomimetic Philosophy</h3>
+              <p className="text-gray-600">Tooth-preserving treatments mimicking natural enamel behavior</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-4">
+            <Microscope className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">Precision Diagnostics</h3>
+              <p className="text-gray-600">3D CBCT scans, intraoral cameras, and caries-detection lasers</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-4">
+            <BookUser className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">Continuing Education</h3>
+              <p className="text-gray-600">Weekly training sessions with global dental innovators</p>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
+      <motion.div 
+        className="relative rounded-2xl overflow-hidden"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <img
+          src="https://media.istockphoto.com/id/2153871515/photo/dentist-performing-a-checkup-on-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=XN6sDf_Vl3R5FR84pgZ8dwB94MZgjvt4PC1gcpk8QPw="
+          alt="Digital smile design consultation"
+          className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1EB053]/20 to-[#F9D77E]/20" />
+        <div className="absolute bottom-6 left-6 bg-white/90 p-4 rounded-lg shadow-md">
+          <h4 className="font-semibold text-gray-800">Smile Design in Action</h4>
+          <p className="text-sm text-gray-600">Dr. Joan using 3D SmileSimulator™ to plan cosmetic transformations</p>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</div>
 
       {/* Team Section */}
-      <div className="py-20 bg-[#f8fafc]">
+      {/* <div className="py-20 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
             Meet Our Expert Dentists
@@ -143,15 +156,13 @@ const About = () => {
                 <h3 className="text-xl font-bold text-[#1EB053] mb-2">{member.name}</h3>
                 <p className="text-gray-600 mb-4">{member.role}</p>
                 <div className="flex space-x-4">
-                  {/* <button className="text-[#1EB053] hover:text-[#169544] transition-colors">
-                    View Profile →
-                  </button> */}
+                 
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Values Section */}
       <div className="py-20 bg-white">

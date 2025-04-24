@@ -97,19 +97,20 @@ import {
   Phone, 
   Clock, 
   MapPin, 
-  Smile, 
-  
   ShieldCheck, 
   Microscope,
   HeartPulse,
   ScanEye,
   Zap,
-  Camera,
-  Bone
+  Camera
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import image1 from '../images/image1.jpg'
+import image2 from '../images/image2.jpg'
+// import joan from '../images/joan.jpg'
+import image3 from '../images/image1.jpg'
 
-// Add this to your CSS file or style tag
+
 const styles = `
 @keyframes slideLeft {
   0% { transform: translateX(100%); }
@@ -136,10 +137,26 @@ export function Home() {
   ];
 
   const services = [
-    { icon: Bone, title: "General Dentistry", text: "Routine checkups, cleanings, and fillings" },
-    { icon: Smile, title: "Cosmetic Dentistry", text: "Whitening, veneers, and smile makeovers" },
-    { icon: HeartPulse, title: "Orthodontics", text: "Braces and aligners for perfect alignment" },
-    { icon: ShieldCheck, title: "Preventive Care", text: "Customized prevention plans for lasting health" }
+    { 
+      image: image1,
+      title: "General Dentistry", 
+      text: "Routine checkups, cleanings, and fillings" 
+    },
+    { 
+      image: image2,
+      title: "Cosmetic Dentistry", 
+      text: "Whitening, veneers, and smile makeovers" 
+    },
+    { 
+      image: image3, // Changed from 'joan' to image3 assuming it was a typo
+      title: "Orthodontics", 
+      text: "Braces and aligners for perfect alignment" 
+    },
+    { 
+      image: image3,
+      title: "Preventive Care", 
+      text: "Customized prevention plans for lasting health" 
+    }
   ];
 
   const technologies = [
@@ -220,7 +237,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with Images */}
       <section className="py-20 bg-[#f8fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -243,8 +260,12 @@ export function Home() {
                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all
                           border-2 border-transparent hover:border-[#1EB053]/20"
               >
-                <div className="bg-gradient-to-br from-[#1EB053] to-[#169544] w-max p-3 rounded-xl mb-6">
-                  <service.icon className="h-8 w-8 text-white" />
+                <div className="h-48 w-full mb-6 overflow-hidden rounded-xl">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{service.text}</p>
@@ -291,7 +312,7 @@ export function Home() {
                 {technologies.map((tech, index) => (
                   <div key={index} className="flex items-start gap-4">
                     <div className="bg-[#1EB053] p-2 rounded-lg">
-                      <Microscope className="h-6 w-6 text-white" />
+                      <tech.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900">{tech.title}</h3>
@@ -304,42 +325,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-  {features.map((service, index) => (
-    <motion.div
-      key={index}
-      initial={{ y: 50, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      whileHover={{ scale: 1.05 }}
-      className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all
-                border border-[#1EB053]/20 hover:border-[#1EB053]/40 relative"
-    >
-      {/* Gradient background effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1EB053]/5 to-[#F9D77E]/5 opacity-0 
-                     group-hover:opacity-100 rounded-2xl transition-opacity" />
-      
-      {/* Icon container */}
-      <motion.div 
-        initial={{ scale: 0.9 }}
-        whileInView={{ scale: 1 }}
-        className="bg-gradient-to-br from-[#1EB053] to-[#169544] w-max p-4 rounded-xl mb-6
-                  shadow-md"
-      >
-        <service.icon className="h-8 w-8 text-white" />
-      </motion.div>
 
-      {/* Content */}
-      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#1EB053] transition-colors">
-        {service.title}
-      </h3>
-      <p className="text-gray-600 leading-relaxed text-[15px]">
-        {service.text}
-      </p>
-    </motion.div>
-  ))}
-</div>
       {/* Dental Care Process */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -383,7 +369,6 @@ export function Home() {
       {/* CTA Section */}
       <section className="relative py-24 bg-gradient-to-br from-[#1EB053] to-[#169544]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Smile className="h-24 w-24 text-white/10 absolute top-8 left-1/4" />
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
