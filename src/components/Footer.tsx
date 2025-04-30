@@ -267,10 +267,22 @@
 //   );
 // }
 
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram,  } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
+  const CustomTiktokIcon = ({ className }: { className?: string }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={className}
+    >
+      <path
+        fill="currentColor"
+        d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.527V7.79a4.831 4.831 0 0 1-1.003-.104z"
+      />
+    </svg>
+  );
   return (
     <footer className="bg-[#1B4536] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -284,17 +296,32 @@ export function Footer() {
               Providing exceptional dental care with compassion and advanced technology.
             </p>
             <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ y: -2 }}
-                  className="text-[#F9D77E] hover:text-white transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
+  {[
+    { 
+      Icon: Facebook, 
+      url: 'https://www.facebook.com/WisdomDentalClinicKe' 
+    },
+    { 
+      Icon: Instagram, 
+      url: 'https://www.instagram.com/wisdom.dentalclinic?igsh=MWl6MXNzeDRlcnpzaw==' 
+    },
+    { 
+      Icon: CustomTiktokIcon,  // Use our custom component
+      url: 'https://www.tiktok.com/@wisdomdentalclinic?_t=ZM-8vy7DDBiQ90&_r=1' 
+    }
+  ].map(({ Icon, url }, index) => (
+    <motion.a
+      key={index}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ y: -2 }}
+      className="text-[#F9D77E] hover:text-white transition-colors"
+    >
+      <Icon className="w-5 h-5" />
+    </motion.a>
+  ))}
+</div>
           </div>
 
           {/* Services */}
