@@ -14,9 +14,9 @@ import {
 } from 'lucide-react';
 import image from '../images/image2.jpg'
 import image1 from '../images/istockphoto-1543511026-612x612.webp'
-import image3 from '../images/ozkan-guner-ifPT2LwMvDs-unsplash.jpg'
+import image3 from '../images/ozkan-guner-bPlnHzLw_Mw-unsplash44.jpg'
 import image2  from '../images/premium_photo-1692441602035-a03ea6adfda2.avif'
-import Cosmetic from '../images/shedrack-salami-GKMQtxRe_Kg-unsplash.jpg'
+import Cosmetic from '../images/cosm.jpeg'
 import image4 from '../images/shedrack-salami-7lBJaJpS3z4-unsplash222.jpg'
 
 const services = [

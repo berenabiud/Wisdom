@@ -107,7 +107,7 @@ import {
 import { motion } from 'framer-motion';
 import image1 from '../images/image1.jpg'
 // import image2 from '../images/image2.jpg'
-import Cosmetic from '../images/premium_photo-1667520328870-5b871fb2f2125444.avif'
+import Cosmetic from '../images/cosm.jpeg'
 import image3 from '../images/ozkan-guner-bPlnHzLw_Mw-unsplash44.jpg'
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Cloud, Database, Users, Server } from 'lucide-react';
 
 function Products() {

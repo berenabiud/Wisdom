@@ -163,6 +163,9 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CalendarDays, Clock, User, ArrowRight, Tag } from 'lucide-react';
+import future from '../images/fut.jpg'
+import maintainance from '../images/main 2.jpg'
+import Pediatric from '../images/Pediatric Dental.avif'
 
 const posts = [
   {
@@ -185,7 +188,7 @@ const posts = [
     readTime: '5 min',
     tags: ['Technology', 'Innovation'],
     category: 'Dental Tech',
-    image: 'https://picsum.photos/600/400?random=1'
+    image: future
   },
   {
     id: 2,
@@ -207,7 +210,7 @@ const posts = [
     readTime: '8 min',
     tags: ['Wellness', 'Prevention'],
     category: 'Oral Health',
-    image: 'https://picsum.photos/600/400?random=2'
+    image: maintainance
   },
   {
     id: 3,
@@ -229,7 +232,7 @@ const posts = [
     readTime: '6 min',
     tags: ['Children', 'Prevention'],
     category: 'Pediatric Dentistry',
-    image: 'https://picsum.photos/600/400?random=3'
+    image: Pediatric
   }
 ];
 

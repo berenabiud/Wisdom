@@ -2,6 +2,7 @@
 import { Smile, Shield, Clock, HeartPulse, Microscope, Rocket, Bone, BookUser } from 'lucide-react';
 import { motion } from 'framer-motion';
 // import { useInView } from 'react-intersection-observer';
+import dr from '../images/patient-pov-listening-explication-teeth-treatment-dentist-coverall-showing-x-ray-tablet-stomatology-specialist-wearing-protective-suit-against-infection-with-covid19-pointing-ra.jpg'
 
 const About = () => {
   const stats = [
@@ -85,11 +86,10 @@ const About = () => {
           From Local Care to Smile Revolution
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          What began in 2022 as a modest neighborhood practice with Dr. Joan's vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 5,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
+          What began in 2022 as a modest neighborhood practice with Dr. Rozinah Malemba Walonyo vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 5,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
         </p>
         <p className="text-gray-600 text-lg leading-relaxed">
-          Our evolution mirrors Nairobi's dental health transformation - from emergency extractions to preventive smile architecture. Today, we combine this rich heritage with German-engineered sterilization protocols and Japanese diagnostic systems to create what the Kenya Dental Association recognizes as "the new standard in oral wellness."
-        </p>
+        Founder and Director Rozinah Malemba Walonyo, Director Stephen Mankone , our locum Doctors Dr. Shrivanash Akash        </p>
         <div className="space-y-4">
           <div className="flex items-start space-x-4">
             <HeartPulse className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
@@ -121,14 +121,14 @@ const About = () => {
         transition={{ duration: 0.5 }}
       >
         <img
-          src="https://media.istockphoto.com/id/2153871515/photo/dentist-performing-a-checkup-on-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=XN6sDf_Vl3R5FR84pgZ8dwB94MZgjvt4PC1gcpk8QPw="
+          src={dr}
           alt="Digital smile design consultation"
           className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1EB053]/20 to-[#F9D77E]/20" />
         <div className="absolute bottom-6 left-6 bg-white/90 p-4 rounded-lg shadow-md">
           <h4 className="font-semibold text-gray-800">Smile Design in Action</h4>
-          <p className="text-sm text-gray-600">Dr. Joan using 3D SmileSimulator™ to plan cosmetic transformations</p>
+          <p className="text-sm text-gray-600">Dr. Rozinah Malemba Walonyo using 3D SmileSimulator™ to plan cosmetic transformations</p>
         </div>
       </motion.div>
     </div>
