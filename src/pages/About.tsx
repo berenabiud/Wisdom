@@ -12,11 +12,11 @@ const About = () => {
     { icon: <Clock className="h-8 w-8" />, value: "24/7", label: "Emergency Care" }
   ];
 
-  // const team = [
-  //   { name: "Dr. Sarah Johnson", role: "Lead Dentist", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2" },
-  //   { name: "Dr. Michael Chen", role: "Orthodontist", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d" },
-  //   { name: "Dr. Emma Wilson", role: "Pediatric Dentist", img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f" }
-  // ];
+  const team = [
+    { name: "Dr. Rozinah Malemba Walonyo", role: "Founder and Director", img:""  },
+    { name: "Dr.  Stephen Mankone", role: "Director", img: ""},
+    { name: "Dr. Shrivanash Akash", role: "Locum Doctor", img: "" }
+  ];
 
   return (
     <div className="overflow-hidden">
@@ -86,10 +86,9 @@ const About = () => {
           From Local Care to Smile Revolution
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed">
-          What began in 2022 as a modest neighborhood practice with Dr. Rozinah Malemba Walonyo vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 5,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
+          What began in 2022 as a modest neighborhood practice with Director and Co-Founder vision has blossomed into East Africa's first digital dental ecosystem. Through years of perfecting precision dentistry, we've restored over 5,000 smiles while maintaining our core belief: exceptional dental care should feel personal, not clinical.
         </p>
-        <p className="text-gray-600 text-lg leading-relaxed">
-        Founder and Director Rozinah Malemba Walonyo, Director Stephen Mankone , our locum Doctors Dr. Shrivanash Akash        </p>
+      
         <div className="space-y-4">
           <div className="flex items-start space-x-4">
             <HeartPulse className="h-6 w-6 text-[#1EB053] flex-shrink-0" />
@@ -136,7 +135,7 @@ const About = () => {
 </div>
 
       {/* Team Section */}
-      {/* <div className="py-20 bg-[#f8fafc]">
+      <div className="py-20 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
             Meet Our Expert Dentists
@@ -162,7 +161,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Values Section */}
       <div className="py-20 bg-white">

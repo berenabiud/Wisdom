@@ -13,35 +13,39 @@ import {
   CalendarRange
 } from 'lucide-react';
 import image from '../images/image2.jpg'
-import image1 from '../images/istockphoto-1543511026-612x612.webp'
-import image3 from '../images/ozkan-guner-bPlnHzLw_Mw-unsplash44.jpg'
+import image1 from '../images/Root Canal2.jpeg'
+import image3 from '../images/Teeth Whitening.jpg'
 import image2  from '../images/premium_photo-1692441602035-a03ea6adfda2.avif'
-import Cosmetic from '../images/cosm.jpeg'
-import image4 from '../images/shedrack-salami-7lBJaJpS3z4-unsplash222.jpg'
+import Cosmetic from '../images/veneers.webp'
+import image4 from '../images/Tooth Extraction.jpeg'
+import orthoImage from '../images/orthodo.jpeg';
+import implantImage from '../images/fut.jpg';
+import emergencyImage from '../images/emg.png';
+import xrayImage from '../images/Digital X-Rays 2.avif';
+import laserImage from '../images/Laser Dentistry2.avif';
+import imaging3d from '../images/Digital X-Rays 2.avif';
+import pediatricImage from '../images/Pediatric Dentistry22.jpg';
 
 const services = [
   {
     id: 1,
     name: 'General Dentistry',
     description: 'Regular checkups, cleanings, fillings, and preventive care to maintain optimal oral health.',
-    // price: '$120',
-    // duration: '60 min',
+   
     image: image,
   },
   {
     id: 2,
     name: 'Cosmetic Dentistry',
     description: 'Enhancing your smile with procedures such as veneers, bonding, and smile makeovers.',
-    // price: '$299',
-    // duration: '90 min',
+    
     image: Cosmetic,
   },
   {
     id: 3,
     name: 'Teeth Whitening',
     description: 'Safe and effective treatments to brighten your teeth and remove stains.',
-    // price: '$150',
-    // duration: '45 min',
+    
     image: image3,
   },
 
@@ -49,28 +53,26 @@ const services = [
     id: 4,
     name: 'Gum Treatment',
     description: 'Preventing and managing periodontal disease to protect your gums and overall health.',
-    // price: '$800',
-    // duration: '120 min',
+    
     image: image2,
   },
   {
     id: 5,
     name: 'Root Canal',
     description: 'Saving infected or damaged teeth with effective endodontic treatment',
-    // price: '$800',
-    // duration: '120 min',
+   
     image: image1,
   },
   {
     id: 6,
     name: 'Tooth Extraction',
     description: 'Safe and comfortable removal of teeth when necessary.',
-    // price: '$800',
-    // duration: '120 min',
+    
     image: image4,
   }
 
 ];
+
 
 const specializedServices = [
   {
@@ -78,31 +80,30 @@ const specializedServices = [
     name: 'Pediatric Dentistry',
     description: 'Gentle care for children\'s dental health',
     icon: Baby,
-    // price: '$140'
+    image: pediatricImage
   },
   {
     id: 2,
     name: 'Orthodontic Treatment',
     description: 'Custom braces and aligner solutions',
     icon: Braces,
-    // price: 'From $2000'
+    image: orthoImage
   },
   {
     id: 3,
     name: 'Dental Implants',
     description: 'Permanent tooth replacement solutions',
     icon: Bone,
-    // price: 'From $1500'
+    image: implantImage
   },
   {
     id: 4,
     name: 'Emergency Care',
     description: '24/7 urgent dental services',
     icon: CalendarCheck,
-    // price: '$200'
+    image: emergencyImage
   }
 ];
-
 export function Services() {
   return (
     <div className="py-20 bg-gradient-to-b from-[#F9D77E]/10 to-white">
@@ -192,25 +193,32 @@ We offer a wide range of dental treatments designed to keep your smile healthy a
             {specializedServices.map((service) => (
               <div
                 key={service.id}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="bg-[#1EB053]/10 w-max p-3 rounded-lg mb-4">
-                  <service.icon className="h-6 w-6 text-[#1EB053]" />
+                <div className="relative h-48">
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 bg-[#1EB053]/10 p-3 rounded-lg">
+                    <service.icon className="h-6 w-6 text-[#1EB053]" />
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {service.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-base font-medium text-[#1EB053]">
-                    {/* {service.price} */}
-                  </span>
-                  <Link
-                    to="/book"
-                    className="text-[#1EB053] hover:text-[#169544] text-sm font-medium flex items-center gap-1"
-                  >
-                    Details <span aria-hidden="true">→</span>
-                  </Link>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                  <div className="flex justify-between items-center">
+                    <Link
+                      to="/book"
+                      className="text-[#1EB053] hover:text-[#169544] text-sm font-medium flex items-center gap-1"
+                    >
+                      Details <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -233,34 +241,48 @@ We offer a wide range of dental treatments designed to keep your smile healthy a
               {
                 title: "Digital X-Rays",
                 text: "90% less radiation with instant imaging",
-                icon: Microscope
+                icon: Microscope,
+                image: xrayImage
               },
               {
                 title: "Laser Dentistry",
                 text: "Pain-free procedures with faster healing",
-                icon: ShieldCheck
+                icon: ShieldCheck,
+                image: laserImage
               },
               {
                 title: "3D Imaging",
                 text: "Precise treatment planning and outcomes",
-                icon: Smile
+                icon: Smile,
+                image: imaging3d
               }
             ].map((tech, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-md"
+                className="bg-white group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="bg-[#F9D77E]/20 w-max p-3 rounded-lg mb-4">
-                  <tech.icon className="h-6 w-6 text-[#1EB053]" />
+                <div className="relative h-48">
+                  <img
+                    src={tech.image}
+                    alt={tech.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 bg-[#F9D77E]/20 p-3 rounded-lg">
+                    <tech.icon className="h-6 w-6 text-[#1EB053]" />
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {tech.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{tech.text}</p>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {tech.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{tech.text}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
+
 
         {/* Insurance Section */}
         <div className="bg-[#1EB053]/10 p-8 rounded-xl text-center mb-20 space-y-6">
@@ -278,6 +300,7 @@ We offer a wide range of dental treatments designed to keep your smile healthy a
                 className="bg-[#1EB053] hover:bg-[#169544] text-white px-5 py-2.5 rounded-lg text-sm font-medium"
               >
                 View Insurance Plans
+                
               </Link>
               <Link
                 to="/financing"

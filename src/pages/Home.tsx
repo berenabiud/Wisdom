@@ -1,97 +1,5 @@
-// // import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { Calendar, Phone, Clock, MapPin } from 'lucide-react';
-
-// export function Home() {
-//   return (
-//     <div>
-//       {/* Hero Section */}
-//       <div
-//         className="relative bg-cover bg-center h-[600px]"
-//         style={{
-//           backgroundImage: 'url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80")'
-//         }}
-//       >
-//         <div className="absolute inset-0 bg-black bg-opacity-50" />
-//         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-//           <div className="text-white">
-//             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-//               Your Smile, Our Passion
-//             </h1>
-//             <p className="text-xl mb-8 max-w-2xl">
-//               Experience exceptional dental care with our team of experienced professionals.
-//               We're committed to giving you the confident smile you deserve.
-//             </p>
-//             <Link
-//               to="/book"
-//               className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors"
-//             >
-//               Book Appointment
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Features Section */}
-//       <div className="py-16 bg-white">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="grid md:grid-cols-4 gap-8">
-//             <div className="text-center">
-//               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-//                 <Calendar className="h-8 w-8 text-blue-600" />
-//               </div>
-//               <h3 className="text-lg font-medium mb-2">Easy Booking</h3>
-//               <p className="text-gray-600">Book your appointment online anytime</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-//                 <Clock className="h-8 w-8 text-blue-600" />
-//               </div>
-//               <h3 className="text-lg font-medium mb-2">Extended Hours</h3>
-//               <p className="text-gray-600">Open early and late for your convenience</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-//                 <Phone className="h-8 w-8 text-blue-600" />
-//               </div>
-//               <h3 className="text-lg font-medium mb-2">24/7 Support</h3>
-//               <p className="text-gray-600">Always here when you need us</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-//                 <MapPin className="h-8 w-8 text-blue-600" />
-//               </div>
-//               <h3 className="text-lg font-medium mb-2">Convenient Location</h3>
-//               <p className="text-gray-600">Easy to find with parking available</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* CTA Section */}
-//       <div className="bg-blue-600 py-16">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h2 className="text-3xl font-bold text-white mb-4">
-//             Ready to Transform Your Smile?
-//           </h2>
-//           <p className="text-xl text-blue-100 mb-8">
-//             Schedule your consultation today and take the first step towards a brighter smile.
-//           </p>
-//           <Link
-//             to="/book"
-//             className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
-//           >
-//             Book Now
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { 
   Calendar, 
   Phone, 
@@ -106,9 +14,9 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import image1 from '../images/image1.jpg'
-// import image2 from '../images/image2.jpg'
-import Cosmetic from '../images/cosm.jpeg'
-import image3 from '../images/ozkan-guner-bPlnHzLw_Mw-unsplash44.jpg'
+import Cosmetic from '../images/veneers.webp'
+import image3 from '../images/Orthodonticsbraces.webp'
+import GoogleReviews from '../components/GoogleReviews';
 
 
 const styles = `
@@ -126,9 +34,38 @@ const styles = `
   display: inline-block;
   animation: slideLeft 10s linear infinite;
 }
+  @keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animated-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-button span {
+  display: inline-block;
+  animation: slideLeft 10s linear infinite;
+}
+
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.before-after-image {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 `;
 
 export function Home() {
+  const [activeTreatment, setActiveTreatment] = useState(0);
   const features = [
     { icon: Calendar, title: "Easy Booking", text: "Book your appointment online anytime" },
     { icon: Clock, title: "Extended Hours", text: "Open early and late for your convenience" },
@@ -158,6 +95,34 @@ export function Home() {
       text: "Customized prevention plans for lasting health" 
     }
   ];
+  // const treatments = [
+  //   { 
+  //     title: "Dental Implants",
+  //     before: "https://images.unsplash.com/photo-1588773848779-3b4bddb71cc4",
+  //     after: "https://images.unsplash.com/photo-1621342153950-6b99b3564e9c"
+  //   },
+  //   {
+  //     title: "Teeth Whitening",
+  //     before: "https://images.unsplash.com/photo-1588773848779-3b4bddb71cc4",
+  //     after: "https://images.unsplash.com/photo-1621342153950-6b99b3564e9c"
+  //   },
+  //   {
+  //     title: "Dental Crowns",
+  //     before: "https://images.unsplash.com/photo-1588773848779-3b4bddb71cc4",
+  //     after: "https://images.unsplash.com/photo-1621342153950-6b99b3564e9c"
+  //   },
+  //   {
+  //     title: "Dental Bonding",
+  //     before: "https://images.unsplash.com/photo-1588773848779-3b4bddb71cc4",
+  //     after: "https://images.unsplash.com/photo-1621342153950-6b99b3564e9c"
+  //   },
+  //   {
+  //     title: "Diastema Treatment",
+  //     before: "https://images.unsplash.com/photo-1588773848779-3b4bddb71cc4",
+  //     after: "https://images.unsplash.com/photo-1621342153950-6b99b3564e9c"
+  //   }
+  // ];
+
 
   const technologies = [
     { icon: ScanEye, title: "Digital X-Rays", text: "90% less radiation with instant results" },
@@ -206,6 +171,75 @@ export function Home() {
               </Link>
             </motion.div>
           </motion.div>
+        </div>
+      </motion.section>
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="py-20 bg-[#f8fafb]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Working Hours */}
+            <motion.div 
+              className="bg-white p-8 rounded-2xl shadow-lg border-2 border-[#1EB053]/10"
+              whileHover={{ y: -5 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <Clock className="h-12 w-12 text-[#1EB053]" />
+                <h2 className="text-3xl font-bold text-gray-900">Working Hours</h2>
+              </div>
+              <div className="space-y-4 text-lg text-gray-600">
+                <p className="flex justify-between">
+                  <span>Mon - Fri:</span>
+                  <span className="font-semibold text-[#1EB053]">7:00AM - 7:00PM</span>
+                </p>
+                <p className="flex justify-between">
+                  <span>Saturday:</span>
+                  <span className="font-semibold text-[#1EB053]">7:00AM - 4:00PM</span>
+                </p>
+                <p className="flex justify-between text-gray-400">
+                  <span>Sunday:</span>
+                  <span>Closed</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Locations */}
+            <motion.div 
+              className="space-y-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <MapPin className="h-12 w-12 text-[#1EB053]" />
+                <h2 className="text-3xl font-bold text-gray-900">Our Locations</h2>
+              </div>
+              
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#F9D77E]"
+                whileHover={{ x: 10 }}
+              >
+                <h3 className="text-xl font-bold text-[#1EB053] mb-2">Nairobi CBD</h3>
+                <p className="text-gray-600">
+                Opposite cooperative bank, agha khan walk<br/>
+                NHC House 1st floor
+                </p>
+              </motion.div>
+
+              {/* <motion.div 
+                className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#F9D77E]"
+                whileHover={{ x: 10 }}
+              >
+                <h3 className="text-xl font-bold text-[#1EB053] mb-2">Thika Gateway</h3>
+                <p className="text-gray-600">
+                  2nd Floor, Pisza Plaza,<br/>
+                  Gakere Road, Thika
+                </p>
+              </motion.div> */}
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
@@ -325,7 +359,7 @@ export function Home() {
           </div>
         </div>
       </section>
-
+      <GoogleReviews/>
       {/* Dental Care Process */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -395,6 +429,7 @@ export function Home() {
           </motion.div>
         </div>
       </section>
+   
     </div>
   );
 }
