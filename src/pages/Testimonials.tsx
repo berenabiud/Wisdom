@@ -194,6 +194,10 @@ import { useEffect, useState } from 'react';
 import { TestimonialCard } from '../components/TestimonialCard';
 import type { Testimonial } from '../types';
 
+import video1 from '../images/video1.mp4';
+import video2 from '../images/video2.mp4'
+import video3 from '../images/video3.mp4';
+import video4 from '../images/video4.mp4'
 declare global {
   interface Window {
     Elfsight?: {
@@ -216,21 +220,46 @@ interface ElfsightReview {
 }
 
 export function Testimonials() {
+  console.log('Testimonials component mounted')
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  
+  const videoTestimonials = [
+    {
+      id: 'video-1',
+      video: video1,
+      title: 'Davids\'s Journey',
+      description: 'Hear how David found relief after years of having bad breath'
+    },
+    {
+      id: 'video-2',
+      video: video2,
+      title: "Emily's Experience",
+      description: 'Discover how Emily overcame dental anxiety with our gentle care',
+    },
+    {
+      id: 'video-3',
+      video: video3, // Make sure you've imported this video too
+      title: "Michael's Braces Story",
+      description: 'Michael shares his transformative journey with braces and a confident new smile',
+    },
+    {
+      id:'video-4',
+      video:video4,
+      title:"Teeth cleaning process",
+      description:'Experience the best ,most peacefull cleaning process'
+    }
+  ];
 
   useEffect(() => {
     const loadReviews = async () => {
       try {
-        // Load Elfsight platform script
         await loadScript('https://static.elfsight.com/platform/platform.js');
         
-        // Initialize widget
         const widget = document.querySelector('.elfsight-app-5af7f1ac-4e1f-49ac-9e29-ed00cbb22246');
         if (!widget) throw new Error('Widget element not found');
 
-        // Wait for reviews to load
         const reviews = await waitForReviews(widget);
         const formatted = formatReviews(reviews);
         
@@ -298,6 +327,7 @@ export function Testimonials() {
       })
     }));
   };
+  console.log('All videos:', videoTestimonials);
 
   return (
     <div className="py-16 bg-gray-50">
@@ -311,21 +341,56 @@ export function Testimonials() {
           </p>
         </div>
 
-        {loading && (
-          <div className="text-center text-gray-600">Loading reviews...</div>
-        )}
-
-        {error && (
-          <div className="text-center text-red-500">{error}</div>
-        )}
-
-        {!loading && !error && (
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+        {/* Video Testimonials Section */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-800">
+            Watch Their Stories
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {videoTestimonials.map((video) => (
+              <div key={video.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div className="relative pt-[56.25%]"> {/* 16:9 aspect ratio */}
+                  <video 
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    controls
+                    muted // Added for better mobile compatibility
+                    playsInline // Added for iOS compatibility
+                  >
+                    <source src={video.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">{video.title}</h3>
+                  <p className="text-gray-600">{video.description}</p>
+                </div>
+              </div>
             ))}
           </div>
-        )}
+        </div>
+
+        {/* Written Testimonials Section */}
+        <div>
+          <h2 className="text-2xl font-semibold text-center mb-12 text-gray-800">
+            What Our Patients Say
+          </h2>
+
+          {loading && (
+            <div className="text-center text-gray-600">Loading reviews...</div>
+          )}
+
+          {error && (
+            <div className="text-center text-red-500">{error}</div>
+          )}
+
+          {!loading && !error && (
+            <div className="grid md:grid-cols-2 gap-8">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Hidden Elfsight Widget Container */}

@@ -14,7 +14,7 @@ import { Popup } from './popups/Popup';
 import ScrollToTop from './components/ScrollToTop';
 import About from './pages/About';
 import InsurancePartners from './pages/InsurancePartners';
-
+import TestimonialsPage from './pages/TestimonialsPage';
 // import BlogPost from './pages/Blog'
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/book" element={<Book />} />
-              <Route path="/testimonials" element={<GoogleReviews />} />
+              <Route path="/testimonials" element={<TestimonialsPage />} />
               <Route path="/blogs" element={<Blog />} />
               <Route path='/about-us' element={<About/>}/>
               <Route path="/contact" element={<Contact />} />

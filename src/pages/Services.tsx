@@ -16,8 +16,9 @@ import image from '../images/image2.jpg'
 import image1 from '../images/Root Canal2.jpeg'
 import image3 from '../images/Teeth Whitening.jpg'
 import image2  from '../images/premium_photo-1692441602035-a03ea6adfda2.avif'
-import Cosmetic from '../images/veneers.webp'
+// import Cosmetic from '../images/veneers.webp'
 import image4 from '../images/Tooth Extraction.jpeg'
+import cosmetics from '../images/cosmetics.jpg'
 import orthoImage from '../images/orthodo.jpeg';
 import implantImage from '../images/fut.jpg';
 import emergencyImage from '../images/emg.png';
@@ -39,7 +40,7 @@ const services = [
     name: 'Cosmetic Dentistry',
     description: 'Enhancing your smile with procedures such as veneers, bonding, and smile makeovers.',
     
-    image: Cosmetic,
+    image: cosmetics,
   },
   {
     id: 3,
