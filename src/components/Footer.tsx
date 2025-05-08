@@ -1,5 +1,4 @@
-
-import { MapPin, Phone, Mail, Facebook,  Instagram,  } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
@@ -15,20 +14,29 @@ export function Footer() {
       />
     </svg>
   );
-  return (
-    <footer className="bg-[#1B4536] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold text-[#F9D77E]">Wisdom Dental Clinic Limited</span>
-            </div>
-            <p className="text-sm text-gray-300">
-              Providing exceptional dental care with compassion and advanced technology.
-            </p>
-            <div className="flex space-x-4">
-  {[
+
+  const services = [
+    'General Dentistry',
+    'Cosmetic Dentistry',
+    'Orthodontics',
+    'Pediatric Care',
+    'Dental Implants'
+  ];
+
+  const quickLinks = [
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Meet the Team', path: '/about-us' },
+    { name: 'Patient Reviews', path: '/testimonials' },
+    { name: 'Blog', path: '/blogs' }
+  ];
+
+  const legalLinks = [
+    'Privacy Policy',
+    'Terms of Service',
+    'Accessibility'
+  ];
+
+  const socialLinks = [
     { 
       Icon: Facebook, 
       url: 'https://www.facebook.com/WisdomDentalClinicKe' 
@@ -38,31 +46,46 @@ export function Footer() {
       url: 'https://www.instagram.com/wisdom.dentalclinic?igsh=MWl6MXNzeDRlcnpzaw==' 
     },
     { 
-      Icon: CustomTiktokIcon,  // Use our custom component
+      Icon: CustomTiktokIcon,
       url: 'https://www.tiktok.com/@wisdomdentalclinic?_t=ZM-8vy7DDBiQ90&_r=1' 
     }
-  ].map(({ Icon, url }, index) => (
-    <motion.a
-      key={index}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ y: -2 }}
-      className="text-[#F9D77E] hover:text-white transition-colors"
-    >
-      <Icon className="w-5 h-5" />
-    </motion.a>
-  ))}
-</div>
+  ];
+
+  return (
+    <footer className="bg-[rgba(27,69,54,0.85)] backdrop-blur-sm text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
+          {/* Company Info */}
+          <div className="space-y-3">
+            <div className="flex items-center">
+              <span className="text-xl font-semibold text-[#F9D77E]">Wisdom Dental Clinic</span>
+            </div>
+            <p className="text-xs text-gray-200">
+              Providing exceptional dental care with compassion and advanced technology.
+            </p>
+            <div className="flex space-x-3">
+              {socialLinks.map(({ Icon, url }, index) => (
+                <motion.a
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  className="text-[#F9D77E] hover:text-white transition-colors"
+                >
+                  <Icon className="w-4 h-4" />
+                </motion.a>
+              ))}
+            </div>
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Our Services</h4>
-            <ul className="space-y-2">
-              {['General Dentistry', 'Cosmetic Dentistry', 'Orthodontics', 'Pediatric Care', 'Dental Implants'].map((item, index) => (
+          <div className="space-y-2">
+            <h4 className="text-base font-medium text-[#F9D77E]">Our Services</h4>
+            <ul className="space-y-1">
+              {services.map((item, index) => (
                 <li key={index}>
-                  <a href="/services" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <a href="/services" className="text-xs text-gray-200 hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
@@ -71,87 +94,77 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Quick Links</h4>
-            {/* <li <a>href="/blogs" className="text-sm text-gray-300 hover:text-white transition-colors"</a>>About Us</li> */}
-            <a href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
-            Home 
+          <div className="space-y-2">
+            <h4 className="text-base font-medium text-[#F9D77E]">Quick Links</h4>
+            <ul className="space-y-1">
+              {quickLinks.map((item, index) => (
+                <li key={index}>
+                  <a 
+                    href={item.path} 
+                    className="text-xs text-gray-200 hover:text-white transition-colors"
+                  >
+                    {item.name}
                   </a>
-                  <ul className="space-y-2">
-  {[
-    { name: 'About Us', path: '/about-us' },
-    { name: 'Meet the Team', path: '/about-us' },
-    { name: 'Patient Reviews', path: '/testimonials' },
-    { name: 'Blog', path: '/blogs' },
-    // { name: 'Careers', path: '/services' }
-  ].map((item, index) => (
-    <li key={index}>
-      <a 
-        href={item.path} 
-        className="text-sm text-gray-300 hover:text-white transition-colors"
-      >
-        {item.name}
-      </a>
-    </li>
-  ))}
-</ul>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Contact Us</h4>
-            <div className="space-y-3">
+          <div className="space-y-2">
+            <h4 className="text-base font-medium text-[#F9D77E]">Contact Us</h4>
+            <div className="space-y-2">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">NHC House 1st floor , opposite cooperative bank, agha khan walk <br/>Kenya</p>
+                <MapPin className="w-4 h-4 text-[#F9D77E] mt-0.5 flex-shrink-0" />
+                <p className="ml-2 text-xs text-gray-200">NHC House 1st floor, opposite cooperative bank, agha khan walk, Kenya</p>
               </div>
-              <div className="flex items-start">
-                <Phone className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">0714 270 997 ,0791 531 408</p>
+              <div className="flex items-center">
+                <Phone className="w-4 h-4 text-[#F9D77E] flex-shrink-0" />
+                <p className="ml-2 text-xs text-gray-200">0714 270 997, 0791 531 408</p>
               </div>
-              <div className="flex items-start">
-                <Mail className="w-5 h-5 text-[#F9D77E] mt-1 flex-shrink-0" />
-                <p className="ml-2 text-sm text-gray-300">wisdomdentalclinic0@gmail.com</p>
+              <div className="flex items-center">
+                <Mail className="w-4 h-4 text-[#F9D77E] flex-shrink-0" />
+                <p className="ml-2 text-xs text-gray-200">wisdomdentalclinic0@gmail.com</p>
               </div>
             </div>
           </div>
 
           {/* Newsletter */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-[#F9D77E] mb-2">Newsletter</h4>
-            <form className="flex flex-col gap-3">
+          <div className="space-y-2">
+            <h4 className="text-base font-medium text-[#F9D77E]">Newsletter</h4>
+            <form className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="p-3 rounded-lg border border-[#F9D77E] focus:outline-none focus:ring-2 focus:ring-[#1EB053] text-gray-900"
+                className="p-2 text-xs rounded border border-[#F9D77E]/50 focus:outline-none focus:ring-1 focus:ring-[#1EB053] text-gray-900"
                 required
               />
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="bg-[#1EB053] text-white py-3 px-6 rounded-lg hover:bg-[#169544] transition-colors font-medium"
+                className="bg-[#1EB053] text-white py-2 px-4 rounded hover:bg-[#169544] transition-colors text-xs font-medium"
               >
                 Subscribe
               </motion.button>
             </form>
-            <p className="mt-2 text-sm text-gray-300">
+            <p className="text-xs text-gray-200 mt-1">
               Get dental health tips and special offers
             </p>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-[#F9D77E]/20 text-center">
-          <p className="text-sm text-gray-300">
-            © {new Date().getFullYear() }Wisdom Dental Clinic Limited. All rights reserved.
+        <div className="pt-6 border-t border-[#F9D77E]/10 text-center">
+          <p className="text-xs text-gray-300">
+            © {new Date().getFullYear()} Wisdom Dental Clinic Limited. All rights reserved.
           </p>
-          <div className="mt-2 flex flex-wrap justify-center gap-4">
-            {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((item, index) => (
+          <div className="mt-2 flex flex-wrap justify-center gap-3">
+            {legalLinks.map((item, index) => (
               <a
                 key={index}
                 href="#"
-                className="text-sm text-gray-300 hover:text-white transition-colors"
+                className="text-xs text-gray-300 hover:text-white transition-colors"
               >
                 {item}
               </a>

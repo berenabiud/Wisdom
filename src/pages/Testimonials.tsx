@@ -197,7 +197,9 @@ import type { Testimonial } from '../types';
 import video1 from '../images/video1.mp4';
 import video2 from '../images/video2.mp4'
 import video3 from '../images/video3.mp4';
-import video4 from '../images/video4.mp4'
+import video4 from '../images/video4.mp4';
+import video5 from '../images/video5.mp4';
+import video6 from '../images/video6.mp4';
 declare global {
   interface Window {
     Elfsight?: {
@@ -247,6 +249,18 @@ export function Testimonials() {
     {
       id:'video-4',
       video:video4,
+      title:"Teeth cleaning process",
+      description:'Experience the best ,most peacefull cleaning process'
+    },
+    {
+      id:'video-5',
+      video:video5,
+      title:"Teeth cleaning process",
+      description:'Experience the best ,most peacefull cleaning process'
+    },
+    {
+      id:'video-6',
+      video:video6,
       title:"Teeth cleaning process",
       description:'Experience the best ,most peacefull cleaning process'
     }

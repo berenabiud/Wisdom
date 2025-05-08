@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import image1 from '../images/image1.jpg'
-import Cosmetic from '../images/veneers.webp'
+import cosmetics from '../images/cosmetics.jpg'
 import image3 from '../images/Orthodonticsbraces.webp'
 import GoogleReviews from '../components/GoogleReviews';
 
@@ -80,7 +80,7 @@ export function Home() {
       text: "Routine checkups, cleanings, and fillings" 
     },
     { 
-      image: Cosmetic,
+      image: cosmetics,
       title: "Cosmetic Dentistry", 
       text: "Whitening, veneers, and smile makeovers" 
     },
@@ -132,7 +132,7 @@ export function Home() {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <div className=" min-h-screen bg-[#F9F7F2]">
       <style>{styles}</style>
 
       {/* Hero Section */}
@@ -310,7 +310,7 @@ export function Home() {
       </section>
 
       {/* Technology Section */}
-      <section className="py-20 bg-[#f8fafb]">
+      <section className="py-20 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div 
